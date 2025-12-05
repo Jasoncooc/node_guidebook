@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=UoqMunThenKhung&display=swap');h1{
+
+	color: #6fbb9a;
+	text-align: center ;
+	font-size: 250%;
+}
+
+
+h2{
+	color: #6fbb9a;
+	border: #f10e0e 1px dotted;
+	border-left: #d0e35b 10px solid;
+	padding: 5px 20px;
+	margin-bottom: 0;
+}
+body{
+	background-position: center;
+	background-color: #d9fbcc;
+	background-image: url(image/8.png);
+	background-size: 600px ;
+	/* background-repeat: no-repeat;*/
+	/* background-attachment: fixed; */
+}
+
+p{
+	font-family: "UoqMunThenKhung", serif;
+	letter-spacing: 3px;
+}
+
+a:link {color:#FF0000;} 
+a:visited {color:#00FF00;} 
+a:hover {color:#FF00FF;}
+a:active {color:#0000FF;}
+
+marquee{
+    font-size: 2000%;
+    color: #f10707;
+    font-family: "微軟正黑體";
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-align: center;
+}
+#wrap{
+	width: 798px;
+	margin: 40px auto;
+	padding: 40px 80px;
+	border: #f6bb9e 1px solid;
+	background-color: #fff;
+}
+.a { background-color: #4060f1; }
+.b {
+	 background-color: #ffbb0071;
+	 padding: 15px; ;
+}
+img {
+	
+	margin: 10px 0;
+	
+	max-width: 100%;
+	height: auto;
+}
+#top
+{
+	position:fixed;
+	bottom:5px;
+	right:5px;
+}
+.photo{
+	float: left;
+	margin-right: 30px;
+ }
+ section{
+    float: right;
+    width: 100px;
+}
+
+ div {
+		overflow: auto;
+	}
+	

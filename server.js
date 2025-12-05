@@ -7,6 +7,7 @@ const dbConfig = require('./db-config');
 const app = express();
 const port = 3000;
 const connection = mysql.createConnection(dbConfig);
+// const connection = mysql.createPool(dbConfig); // 建議改用 createPool 比較穩定
 
 // --- 3. 設定 Express 中介軟體 (Middleware) ---
 // (A) 為了能解析 <form> POST 過來的資料
@@ -54,4 +55,3 @@ app.post('/add-message', (req, res) => {
 app.listen(port, () => {
   console.log(`伺服器已啟動，請在瀏覽器開啟 http://localhost:${port}`);
 });
-

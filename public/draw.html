@@ -1,0 +1,153 @@
+<head>
+  <meta charset="utf-8">
+  <script src="draw.js" defer></script>
+
+  <!-- 🎨 新增：賽博風格美化樣式 -->
+  <style>
+    /* === 🔹 整體背景與字體設定 === */
+    body {
+      background-color: #0a0f1c; /* 深藍黑底，營造夜晚科技感 */
+      color: #00fff6;            /* 電光藍字體 */
+      font-family: 'Orbitron', 'Segoe UI', sans-serif; /* 賽博風常用字型 */
+      text-align: center;
+      padding: 20px;
+      user-select: none;
+    }
+
+    /* === 🔹 標題（可略） === */
+    h1 {
+      color: #00e0ff;
+      text-shadow: 0 0 10px #00e0ff, 0 0 20px #008cff;
+      letter-spacing: 3px;
+    }
+
+    /* === 🔹 畫布外觀 === */
+    canvas {
+      border: 2px solid #00e0ff;          /* 外框藍光 */
+      box-shadow: 0 0 20px #00e0ff80;     /* 外層發光 */
+      border-radius: 10px;
+      background-color: #0d1b2a;          /* 深藍灰底 */
+      cursor: crosshair;                  /* 十字游標 */
+      margin-bottom: 20px;
+    }
+
+    /* === 🔹 控制區塊 === */
+    div {
+      background: rgba(0, 255, 255, 0.05);
+      border: 1px solid #00e0ff40;
+      border-radius: 8px;
+      padding: 15px;
+      width: 400px;
+      margin: 0 auto 20px auto;
+      box-shadow: 0 0 10px #00e0ff33;
+    }
+
+    /* === 🔹 顏色選擇器 === */
+    input[type="color"] {
+      border: none;
+      outline: none;
+      background: none;
+      width: 50px;
+      height: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00e0ff;
+      border-radius: 5px;
+    }
+
+    /* === 🔹 線條粗細滑桿 === */
+    input[type="range"] {
+      width: 200px;
+      accent-color: #00fff6;  /* 支援現代瀏覽器 */
+      cursor: pointer;
+    }
+
+    /* === 🔹 賽博風按鈕 === */
+    button {
+      background: none;
+      color: #00fff6;
+      border: 2px solid #00fff6;
+      padding: 10px 20px;
+      margin: 10px;
+      border-radius: 8px;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00fff6, inset 0 0 10px #00fff6;
+      transition: all 0.2s ease;
+    }
+
+    /* === 🔹 按鈕 hover 效果 === */
+    button:hover {
+      background-color: #00fff6;
+      color: #0a0f1c;
+      box-shadow: 0 0 20px #00fff6, 0 0 40px #00aaff;
+      transform: scale(1.05);
+    }
+
+    /* === 🔹 生成圖片區 === */
+    #show {
+      margin-top: 20px;
+      border: 2px solid #00e0ff;
+      box-shadow: 0 0 15px #00e0ff80;
+      border-radius: 8px;
+      max-width: 400px;
+      display: none; /* 預設隱藏 */
+    }
+
+    /* === 🔹 賽博風掃描動畫背景 === */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, #00111a 0%, #001a33 100%);
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent 0,
+        transparent 10px,
+        rgba(0, 255, 255, 0.03) 10px,
+        rgba(0, 255, 255, 0.03) 20px
+      );
+      z-index: -1;
+      animation: scan 6s linear infinite;
+    }
+
+    /* === 🔹 掃描動畫效果 === */
+    @keyframes scan {
+      from { background-position: 0 0; }
+      to { background-position: 100px 100px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 🆕 可選：加上酷炫標題 -->
+  <h1>⚡ 賽博風繪圖系統 ⚡</h1>
+
+  <!-- 你原本的內容完全保留 -->
+  <canvas id="canvas" width='800' height='800'></canvas>
+
+  <div>
+    顏色：<input id="color" type="color">
+    粗細：<input id="lineWidth" type="range" min="1" max="20" step="1" />
+    <p>Value: <output id="value"></output></p>
+  </div>
+
+  <button id='toshow'>產生圖片</button>
+  <button id='clear'>清除</button>
+  <br>
+  <img id='show'>
+</body>
