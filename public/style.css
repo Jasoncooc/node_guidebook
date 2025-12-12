@@ -47,6 +47,13 @@ marquee{
 	border: #f6bb9e 1px solid;
 	background-color: #fff;
 }
+#ccwrap{
+	width: 700px;
+	margin: 10px auto;
+	padding: 20px 20px;
+	border: #9ef6f6 10px solid;
+	background-color: #f8f8f8d7;
+}
 .a { background-color: #4060f1; }
 .b {
 	 background-color: #ffbb0071;
