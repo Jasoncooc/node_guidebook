@@ -12,6 +12,8 @@
       text-align: center;
       padding: 20px;
       user-select: none;
+      
+
     }
 
     /* === 🔹 標題（可略） === */
@@ -132,8 +134,11 @@
     }
         /* Add a black background color to the top navigation */
     .topnav {
-      background-color: #333;
+      background-color: #00243b;
       overflow: hidden;
+     
+     
+      
     }
 
     /* Style the links inside the navigation bar */
@@ -141,7 +146,7 @@
       float: left;
       color: #f2f2f2;
       text-align: center;
-      padding: 14px 16px;
+      padding: 14px 8px;
       text-decoration: none;
       font-size: 17px;
     }
@@ -161,13 +166,14 @@
 </head>
 
 <body>
- <div class="topnav">
-  <a class="active" href="index.html">首頁</a>
-  <a href="guestbook.html">留言板</a>
-  <a href="snake.html">貪吃蛇</a>
-  <a href="draw.html">繪圖</a>
-  <a href="guess.html">猜謎</a>
-</div> 
+ <div id="nav"></div>
+<script>
+  fetch("nav.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("nav").innerHTML = data;
+    });
+</script>
   <!-- 🆕 可選：加上酷炫標題 -->
   <h1>⚡ 賽博風繪圖系統 ⚡</h1>
 

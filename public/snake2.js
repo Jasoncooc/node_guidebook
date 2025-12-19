@@ -25,6 +25,7 @@ class Snake {
         this.playerKey = playerKey;
 }
 
+
 	//蛇蛇功能(drawSnake)
     drawSnake() {
     this.moveSnake();
@@ -50,7 +51,7 @@ class Snake {
     while (this.body.length > this.size) {
         this.body.pop();
     }
-    this.checkDeath();
+    this.heckDeath();
 }
 
 	//蛇蛇功能(eatApple)

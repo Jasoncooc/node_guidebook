@@ -69,13 +69,14 @@
     </style>
 </head>
 <body>
-<div class="topnav">
-  <a class="active" href="index.html">首頁</a>
-  <a href="guestbook.html">留言板</a>
-  <a href="snake.html">貪吃蛇</a>
-  <a href="draw.html">繪圖</a>
-  <a href="guess.html">猜謎</a>
-</div>
+<div id="nav"></div>
+<script>
+  fetch("nav.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("nav").innerHTML = data;
+    });
+</script>
     <h1>📝 班級留言板</h1>
 
     <div class="form-container">
